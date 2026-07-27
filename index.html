@@ -127,7 +127,16 @@
   .btn-ghost:hover{ background:var(--surface); transform:translateY(-3px); }
 
   /* ---------- Hero ---------- */
-  .hero{ min-height:100vh; display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding-top:7rem; overflow:hidden; }
+  .hero{
+    min-height:100vh; display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+    padding-top:7rem; overflow:hidden;
+    max-width:none; padding-left:0; padding-right:0;
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    width:100%; max-width:1180px; margin:0 auto; padding:0 1.5rem;
+    display:flex; flex-direction:column; align-items:flex-start;
+  }
   .blob{ position:absolute; border-radius:50%; filter:blur(80px); z-index:0; }
   .blob-1{ width:420px; height:420px; background:var(--accent); opacity:.4; top:-8%; left:-10%; animation:floatBlob 16s ease-in-out infinite; }
   .blob-2{ width:340px; height:340px; background:var(--accent-2); opacity:.3; bottom:-10%; right:-6%; animation:floatBlob 20s ease-in-out infinite reverse; }
@@ -150,7 +159,7 @@
   .hero-sub{ position:relative; z-index:2; max-width:520px; margin-top:1.6rem; font-size:1.1rem; color:var(--text-muted); opacity:0; animation:fadeSlideUp .9s ease forwards .58s; }
   .hero-cta{ position:relative; z-index:2; display:flex; gap:1rem; margin-top:2.4rem; opacity:0; animation:fadeSlideUp .9s ease forwards .74s; flex-wrap:wrap; }
 
-  .scroll-cue{ position:absolute; bottom:2.2rem; left:1.5rem; display:flex; align-items:center; gap:.6rem; font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); z-index:2; }
+  .scroll-cue{ position:absolute; bottom:2.2rem; left:max(1.5rem, calc((100% - 1180px)/2 + 1.5rem)); display:flex; align-items:center; gap:.6rem; font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--text-muted); z-index:2; }
   .scroll-cue .bar{ width:1px; height:34px; background:linear-gradient(var(--accent), transparent); position:relative; overflow:hidden; }
   .scroll-cue .bar::after{ content:''; position:absolute; top:-20px; left:0; width:100%; height:20px; background:var(--accent-2); animation:scrollDown 1.8s ease-in-out infinite; }
   @keyframes scrollDown{ 0%{ top:-20px;} 100%{ top:40px;} }
@@ -309,15 +318,17 @@
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
 
-      <p class="badge"><span class="dot-live"></span> Aberto a oportunidades de estágio</p>
-      <h1 class="hero-title">
-        <span>Otávio</span>
-        <span class="grad">Xavier</span>
-      </h1>
-      <p class="hero-sub">Estudante de TI no Ensino Médio Técnico, aprendendo a programar e testando ideias novas fora do horário de aula.</p>
-      <div class="hero-cta">
-        <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Vamos conversar</a>
-        <a href="#projetos" class="btn btn-ghost">Ver projetos</a>
+      <div class="hero-content">
+        <p class="badge"><span class="dot-live"></span> Aberto a oportunidades de estágio</p>
+        <h1 class="hero-title">
+          <span>Otávio</span>
+          <span class="grad">Xavier</span>
+        </h1>
+        <p class="hero-sub">Estudante de TI no Ensino Médio Técnico, aprendendo a programar e testando ideias novas fora do horário de aula.</p>
+        <div class="hero-cta">
+          <a href="#contato" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Vamos conversar</a>
+          <a href="#projetos" class="btn btn-ghost">Ver projetos</a>
+        </div>
       </div>
 
       <div class="scroll-cue"><span class="bar"></span> role</div>
@@ -405,25 +416,25 @@
           <span class="project-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir no Canva</span>
         </a>
         <a class="project-card reveal-child" href="https://drive.google.com/file/d/1Qh7jFOwwDFcR3uCh7QhHjBW43HZpEA4F/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-          <div class="project-photo"><img src="https://drive.google.com/thumbnail?id=1Qh7jFOwwDFcR3uCh7QhHjBW43HZpEA4F&sz=w800" alt="Fundamentos de Python"></div>
+          <div class="project-photo"><img src="certificado-python.jpg" alt="Fundamentos de Python"></div>
           <h4>Fundamentos de Python</h4>
           <p>Certificado de curso concluído.</p>
           <span class="project-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver certificado</span>
         </a>
         <a class="project-card reveal-child" href="https://drive.google.com/file/d/1OohoFQ7ARKLARSDwg8vlKVPQPNNbq-My/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-          <div class="project-photo"><img src="https://drive.google.com/thumbnail?id=1OohoFQ7ARKLARSDwg8vlKVPQPNNbq-My&sz=w800" alt="Introdução à Cibersegurança"></div>
+          <div class="project-photo"><img src="certificado-ciberseguranca.jpg" alt="Introdução à Cibersegurança"></div>
           <h4>Introdução à Cibersegurança</h4>
           <p>Certificado de curso concluído.</p>
           <span class="project-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver certificado</span>
         </a>
         <a class="project-card reveal-child" href="https://drive.google.com/file/d/1IACDFoIvp7f_u18HMbql6QBbmpO9HeOw/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-          <div class="project-photo"><img src="https://drive.google.com/thumbnail?id=1IACDFoIvp7f_u18HMbql6QBbmpO9HeOw&sz=w800" alt="Gerenciamento de Ameaças Cibernéticas"></div>
+          <div class="project-photo"><img src="certificado-ameacas-ciberneticas.jpg" alt="Gerenciamento de Ameaças Cibernéticas"></div>
           <h4>Gerenciamento de Ameaças Cibernéticas</h4>
           <p>Certificado de curso concluído.</p>
           <span class="project-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver certificado</span>
         </a>
         <a class="project-card reveal-child" href="https://drive.google.com/file/d/1B99NlVnyDyP8exZ8DnmyyL0PxrOtdJZk/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-          <div class="project-photo"><img src="https://drive.google.com/thumbnail?id=1B99NlVnyDyP8exZ8DnmyyL0PxrOtdJZk&sz=w800" alt="Defesa de Redes"></div>
+          <div class="project-photo"><img src="certificado-defesa-redes.jpg" alt="Defesa de Redes"></div>
           <h4>Defesa de Redes</h4>
           <p>Certificado de curso concluído.</p>
           <span class="project-action"><i class="fa-solid fa-arrow-up-right-from-square"></i> Ver certificado</span>
